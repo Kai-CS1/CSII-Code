@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+:root {
+    --gold: #a17b00;
+    --blue: #202124;
+    --lightblue: #43454b;
+    --white: #ebfff8;
+    --number: 
+}
+.listen {
+    position: relative;
+    bottom: -30px;
+    font-size:150px;
+    background-color: var(--blue);
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    color: var(--white);
+    outline: var(--gold) solid 10px;  
+    width:480px
+}
+.slider {
+    position: relative;
+    bottom: -60px;
+    -webkit-appearance: none;
+    width: 90%;
+    height: 30px;
+    background: var(--lightblue);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: -1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: var(--gold);
+    cursor: pointer;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+form {
+    display: grid;
+    place-content: center;
+    height: 40vh;
+}
+.squarebox {
+    font-family: system-ui, sans-serif;
+    font-size: 30px;
+    color: var(--gold);
+    font-weight: bold;
+}
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--blue);
+
+    font: inherit;
+    color: var(--gold);
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--gold);
+    border-radius: 5px;
+    display: grid;
+    place-content: center;
+}
+input[type="checkbox"]::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 30px 30px var(--lightblue);
+}
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+.submit {
+    position: relative;
+    bottom: -130px;
+    font-size:40px;
+    background-color: var(--blue);
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    color: var(--white);
+    outline: var(--gold) solid 5px;  
+    height:70px;
+    width:220px;
+}
+</style>
+
+<title>Intervals</title>
+</head>
+<body>
+<body style="background-color:var(--blue);">
+<center><button class="listen">Listen</button></center>
+<audio controls autoplay>
+  <source src="whatever.ogg" type="audio/ogg">
+  <source src="whatever.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio controls>
+<center><input type="range" min="1" max="8" value="1" class="slider" id="--number"><center>
+<form>
+    <label class="squarebox" style="position: absolute; left: 400px; bottom: 400px;">
+        <input type="checkbox" name="maj"/>
+        Major
+    </label>
+<form>
+    <label class="squarebox" style="position: absolute; left: 720px; bottom: 400px;">
+        <input type="checkbox" name="min"/>
+        Minor
+    </label>
+<form>
+    <label class="squarebox" style="position: absolute; right: 400px; bottom: 400px;">
+        <input type="checkbox" name="perfect"/>
+        Perfect
+    </label>
+<center><button class="submit">Submit</button></center>
+<p>var(--number)</p>
+</body>
+</html>
